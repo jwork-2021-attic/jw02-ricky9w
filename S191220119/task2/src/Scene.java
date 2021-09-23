@@ -1,4 +1,4 @@
-package W02.S191220119.task2.src;
+package S191220119.task2.src;
 
 public class Scene {
     
