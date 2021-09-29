@@ -1,4 +1,4 @@
-@startuml classes
+@startuml class-task1
 
 class Sorter{
     load()

@@ -102,7 +102,7 @@ main方法执行过程中对象时序图如下:
 
 任务二的类图如下:
 
-
+![](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/jwork-2021/jw02-ricky9w/master/S191220119/task2/asset/class-diagram.pu)
 
 大致思路:
 
@@ -110,9 +110,9 @@ main方法执行过程中对象时序图如下:
 
 任务二中的排成一行操作相当于在一个 1x256 的矩阵中进行排序, 任务三则相当于在一个 16x16 的矩阵中排序, 因此需要修改的代码很少.
 
-
-
 可视化结果展示:
+
+
 
 在项目根目录下执行:
 
@@ -125,12 +125,11 @@ java -jar ./utils/asciianimator.jar -f ./S191220119/task2/asset/result-2.txt -l 
 ## 任务三
 任务三的类图如下:
 
-
+![](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/jwork-2021/jw02-ricky9w/master/S191220119/task3/asset/class-diagram.pu)
 
 (其实和任务二一毛一样)
 
 前面说过任务二、三都基于矩阵类 `Matrix` , 因此任务二和任务三的区别仅仅在于修改矩阵创建时的参数, 任务二中是 `row=1, col=256` 而任务三中是 `row=16, col=16` .
 
 可视化结果展示:
-
 
