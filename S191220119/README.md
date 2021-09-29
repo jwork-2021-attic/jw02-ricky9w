@@ -5,19 +5,17 @@
 
 ```
 .
-├── S191220119		//作业目录
-│   ├── task1
-│   ├── task2
-│   │   ├── asset	//资源目录
-│   │   └── src		//源码目录
-│   ├── task3
-│   │   ├── asset
-│   │   └── src
-│   └── utils			//代码公共依赖
-├── bin						//生成的二进制文件
-│   └── example
-├── example				//示例代码
-└── utils					//公共依赖项
+├── example					//示例文件
+├── s191220119
+│   ├── task1				//任务一
+│   ├── task2				//任务二
+│   │   ├── asset		//资源文件, diagram、录屏等
+│   │   └── src			//源代码
+│   ├── task3				//任务三
+│   │   ├── asset
+│   │   └── src
+│   └── utils				//公共代码, GetColor 类
+└── utils						//公共依赖项, asciianimator.jar 等
 ```
 
 ## 类图的生成
@@ -76,11 +74,11 @@ public String toString() {
 
 example中的类图如下:
 
-![](http://www.plantuml.com/plantuml/proxy?cache=no&src=)
+![](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/jwork-2021/jw02-ricky9w/master/S191220119/task1/class-diagram.pu)
 
 main方法执行过程中对象时序图如下:
 
-![]()
+![](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/jwork-2021/jw02-ricky9w/master/S191220119/task1/timeline.pu)
 
 阅读示例代码后发现的优点和可改进之处如下:
 
@@ -96,8 +94,6 @@ main方法执行过程中对象时序图如下:
 + 可以将类中变量的声明放在方法定义之前, 提高代码可读性
 + `getGourdByRank` 使用循环遍历所有 `Gourd` 类成员来找到具有特定 rank 的 `Gourd` 对象, 这在对象数量不多的情况下性能尚可, 但 `Gourd` 数量较多时性能不佳. 改为哈希表数据结构会更好.
 
-
-
 ## 任务二
 
 任务二的类图如下:
@@ -112,12 +108,24 @@ main方法执行过程中对象时序图如下:
 
 可视化结果展示:
 
+冒泡排序:
 
+<a href="https://asciinema.org/a/439030" target="_blank"><img src="https://asciinema.org/a/439030.svg" /></a>
+
+选择排序:
+
+<a href="https://asciinema.org/a/dple4rO94yVRyVAoH3UF6Wtj2" target="_blank"><img src="https://asciinema.org/a/dple4rO94yVRyVAoH3UF6Wtj2.svg" /></a>
 
 在项目根目录下执行:
 
 ```shell
-java -jar ./utils/asciianimator.jar -f ./S191220119/task2/asset/result-2.txt -l false -c false -fps 30
+java -jar ./utils/asciianimator.jar -f ./S191220119/task2/asset/bubble.txt -l false -c false -fps 30
+```
+
+以及
+
+```shell
+java -jar ./utils/asciianimator.jar -f ./S191220119/task2/asset/select.txt -l false -c false -fps 30
 ```
 
 同样可以看到可视化结果.
@@ -133,3 +141,24 @@ java -jar ./utils/asciianimator.jar -f ./S191220119/task2/asset/result-2.txt -l 
 
 可视化结果展示:
 
+冒泡排序:
+
+<a href="https://asciinema.org/a/bqZPttFBepAYGdeA0HTST094O" target="_blank"><img src="https://asciinema.org/a/bqZPttFBepAYGdeA0HTST094O.svg" /></a>
+
+选择排序:
+
+<a href="https://asciinema.org/a/mm36pn6VWxOmsH9RMgBnVmhcn" target="_blank"><img src="https://asciinema.org/a/mm36pn6VWxOmsH9RMgBnVmhcn.svg" /></a>
+
+在项目根目录下执行:
+
+```shell
+java -jar ./utils/asciianimator.jar -f ./S191220119/task3/asset/bubble.txt -l false -c false -fps 30
+```
+
+以及
+
+```shell
+java -jar ./utils/asciianimator.jar -f ./S191220119/task3/asset/select.txt -l false -c false -fps 30
+```
+
+同样可以看到可视化结果.
