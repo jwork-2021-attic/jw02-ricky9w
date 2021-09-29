@@ -1,0 +1,92 @@
+@startuml class-task3
+package s191220119.utils {
+  class GetColor {
+    + GetColor()
+    + getColor(String, int, int) : int[][] {static}
+  }
+}
+package s191220119.task3.src {
+  class BubbleSorter {
+    - a : int[]
+    - plan : String
+    + BubbleSorter()
+    + getPlan() : String
+    + load(int[])
+    + sort()
+    - swap(int, int)
+  }
+  interface Element {
+    + getPosition() : Position {abstract}
+    + getValue() : int {abstract}
+    + setPosition(Position) {abstract}
+  }
+  class Matrix {
+    ~ col : int
+    - positions : Position[]
+    ~ row : int
+    + Matrix(int, int)
+    + get(int, int) : Element
+    + put(Element, int, int)
+    + toArray() : Element[]
+    + toString() : String
+  }
+  ~class Position {
+    - element : Element
+    ~ Position(Element)
+    + setElement(Element)
+  }
+  class Scene {
+    + Scene()
+    + main(String[]) {static}
+  }
+  class SelectSorter {
+    - a : int[]
+    - plan : String
+    + SelectSorter()
+    + getPlan() : String
+    + load(int[])
+    + sort()
+    - swap(int, int)
+  }
+  class Snake {
+    - sorter : Sorter
+    + theSnake : Snake {static}
+    - Snake()
+    - execute(String)
+    + getTheSnake() : Snake {static}
+    - parsePlan(String) : String[]
+    + setSorter(Sorter)
+    + sortYoukai(Matrix) : String
+  }
+  interface Sorter {
+    + getPlan() : String {abstract}
+    + load(int[]) {abstract}
+    + randomArrange(int[]) : int[] {static}
+    + sort() {abstract}
+  }
+  class Youkai {
+    - b : int
+    - g : int
+    - position : Position
+    - r : int
+    - rank : int
+    - youkais : HashMap<Integer, Youkai> {static}
+    ~ Youkai(int, int, int, int)
+    + getPosition() : Position
+    + getValue() : int
+    + getYoukaiByRank(int) : Youkai {static}
+    + rank() : int
+    + setPosition(Position)
+    + swapPosition(Youkai)
+    + toString() : String
+  }
+}
+Position --+ Matrix
+Position -->  "-element" Element
+Youkai -->  "-position" Position
+Snake -->  "-sorter" Sorter
+Snake -->  "-theSnake" Snake
+BubbleSorter ..|> Sorter 
+SelectSorter ..|> Sorter 
+Youkai ..|> Element 
+@enduml

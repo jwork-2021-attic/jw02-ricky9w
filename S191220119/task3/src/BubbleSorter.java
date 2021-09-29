@@ -1,4 +1,4 @@
-package S191220119.task3.src;
+package s191220119.task3.src;
 
 public class BubbleSorter implements Sorter {
 

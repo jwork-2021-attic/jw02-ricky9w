@@ -1,6 +1,6 @@
-package S191220119.task2.src;
+package s191220119.task2.src;
 
-import S191220119.task2.src.Matrix.Position;
+import s191220119.task2.src.Matrix.Position;
 
 public interface Element {
     

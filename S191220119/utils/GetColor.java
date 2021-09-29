@@ -1,4 +1,4 @@
-package S191220119.utils;
+package s191220119.utils;
 
 import java.io.*;
 import javax.imageio.ImageIO;

@@ -1,8 +1,8 @@
-package S191220119.task3.src;
+package s191220119.task3.src;
 
 import java.util.HashMap;
 
-import S191220119.task3.src.Matrix.Position;
+import s191220119.task3.src.Matrix.Position;
 
 public class Youkai implements Element {
     

@@ -1,12 +1,13 @@
-package S191220119.task3.src;
+package s191220119.task3.src;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.stream.IntStream;
-import java.lang.AssertionError;
 
-import S191220119.utils.GetColor;
+import s191220119.utils.GetColor;
+
+import java.lang.AssertionError;
 
 public class Scene {
 
