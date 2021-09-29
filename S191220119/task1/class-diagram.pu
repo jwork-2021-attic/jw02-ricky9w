@@ -1,0 +1,79 @@
+@startuml class-task1
+package example {
+  class BubbleSorter {
+    - a : int[]
+    - plan : String
+    + BubbleSorter()
+    + getPlan() : String
+    + load(int[])
+    + sort()
+    - swap(int, int)
+  }
+  class Geezer {
+    - sorter : Sorter
+    - theGeezer : Geezer {static}
+    - Geezer()
+    - execute(String)
+    + getTheGeezer() : Geezer {static}
+    + lineUp(Line) : String
+    - parsePlan(String) : String[]
+    + setSorter(Sorter)
+  }
+  enum Gourd {
+    + FIVE {static}
+    + FOUR {static}
+    + ONE {static}
+    + SEVEN {static}
+    + SIX {static}
+    + THREE {static}
+    + TWO {static}
+    - b : int
+    - g : int
+    - position : Position
+    - r : int
+    + getGourdByRank(int) : Gourd {static}
+    + getPosition() : Position
+    + getValue() : int
+    + rank() : int
+    + setPosition(Position)
+    + swapPosition(Gourd)
+    + toString() : String
+    + valueOf(String) : Gourd {static}
+    + values() : Gourd[] {static}
+  }
+  interface Linable {
+    + getPosition() : Position {abstract}
+    + getValue() : int {abstract}
+    + setPosition(Position) {abstract}
+  }
+  class Line {
+    - positions : Position[]
+    + Line(int)
+    + get(int) : Linable
+    + put(Linable, int)
+    + toArray() : Linable[]
+    + toString() : String
+  }
+  ~class Position {
+    - linable : Linable
+    ~ Position(Linable)
+    + setLinable(Linable)
+  }
+  class Scene {
+    + Scene()
+    + main(String[]) {static}
+  }
+  interface Sorter {
+    + getPlan() : String {abstract}
+    + load(int[]) {abstract}
+    + sort() {abstract}
+  }
+}
+Position -->  "-linable" Linable
+Geezer -->  "-theGeezer" Geezer
+Gourd -->  "-position" Position
+Geezer -->  "-sorter" Sorter
+Position --+ Line
+BubbleSorter ..|> Sorter 
+Gourd ..|> Linable 
+@enduml

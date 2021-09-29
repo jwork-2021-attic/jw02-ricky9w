@@ -76,11 +76,11 @@ public String toString() {
 
 example中的类图如下:
 
-
+![](http://www.plantuml.com/plantuml/proxy?cache=no&src=)
 
 main方法执行过程中对象时序图如下:
 
-
+![]()
 
 阅读示例代码后发现的优点和可改进之处如下:
 
