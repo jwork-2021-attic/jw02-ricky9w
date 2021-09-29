@@ -15,7 +15,7 @@ public class BubbleSorter implements Sorter {
         tmp = a[i];
         a[i] = a[j];
         a[j] = tmp;
-        plan += String.format("%d <-> %d\n", a[i], a[j]);
+        plan += String.format("%d<->%d\n", a[i], a[j]);
     }
 
     @Override

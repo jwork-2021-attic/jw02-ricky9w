@@ -24,8 +24,31 @@ public class Snake {
     public String sortYoukai(Matrix matrix) {
         String log = new String();
 
-        // TODO: 完成排序逻辑
+        if (sorter == null) {
+            return null;
+        }
+
+        Element[] elements = matrix.toArray();
+        int[] ranks = new int[elements.length];
+
+        for (int i = 0; i < elements.length; i++) {
+            ranks[i] = elements[i].getValue();
+        }
+
+        sorter.load(ranks);
+        sorter.sort();
+
+        String[] sortSteps = this.parsePlan(sorter.getPlan());
+
+        for (String step : sortSteps) {
+            this.execute(step);
+            System.out.println(matrix.toString());
+            log += matrix.toString();
+            log += "\n[frame]\n";
+        }
+
         return log;
+
     }
 
     private String[] parsePlan(String plan) {
@@ -33,8 +56,9 @@ public class Snake {
     }
 
     private void execute(String step) {
-        // TODO: 完成执行逻辑
         String[] couple = step.split("<->");
+        Youkai.getYoukaiByRank(Integer.parseInt(couple[0]))
+            .swapPosition(Youkai.getYoukaiByRank(Integer.parseInt(couple[1])));
 
     }
 }

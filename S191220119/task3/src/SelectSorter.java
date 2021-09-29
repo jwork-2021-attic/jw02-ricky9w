@@ -15,7 +15,7 @@ public class SelectSorter implements Sorter {
         tmp = a[i];
         a[i] = a[j];
         a[j] = tmp;
-        plan += String.format("%d <-> %d\n", a[i], a[j]);
+        plan += String.format("%d<->%d\n", a[i], a[j]);
     }
 
     @Override
@@ -23,8 +23,8 @@ public class SelectSorter implements Sorter {
         for (int i = 0; i < a.length; i++) {
             int mIdx = i;
             for (int j = i; j < a.length; j++)
-                if (a[mIdx] < a[i])
-                    mIdx = i;
+                if (a[j] < a[mIdx])
+                    mIdx = j;
             if (mIdx != i) 
                 swap(i, mIdx);
         }

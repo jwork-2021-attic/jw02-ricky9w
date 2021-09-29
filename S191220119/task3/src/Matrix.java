@@ -8,6 +8,7 @@ public class Matrix {
     public Matrix(int row, int col) {
         this.row = row;
         this.col = col;
+        this.positions = new Position[row * col];
     }
 
     public void put(Element element, int i, int j) {
@@ -26,11 +27,24 @@ public class Matrix {
 
     @Override
     public String toString() {
-        // TODO: 完成矩阵的toString()方法
-        String matrixString = "\t";
-        for (Position p : positions)
-            matrixString += p.element.toString();
+        String matrixString = "";
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                matrixString += positions[i * col + j].element.toString();
+            }
+            matrixString += "\n";
+        }
         return matrixString;
+    }
+
+    public Element[] toArray() {
+        Element[] elements = new Element[this.positions.length];
+
+        for (int i = 0; i < elements.length; i++) {
+            elements[i] = positions[i].element;
+        }
+
+        return elements;
     }
 
     class Position {
