@@ -1,0 +1,34 @@
+@startuml timeline
+
+actor 大娃 as waOne     #Red
+actor 二娃 as waTwo     #Orange
+actor 三娃 as waThree   #Yellow
+actor 四娃 as waFour    #Green
+actor 五娃 as waFive    #Blue
+actor 六娃 as waSix     #Cyan
+actor 七娃 as waSeven   #Purple
+
+waSeven <-[#Black]> waFive : swap
+waSeven <-[#Black]> waTwo : swap
+waSeven <-[#Black]> waSix : swap
+waSeven <-[#Black]> waFour : swap
+waSeven <-[#Black]> waOne : swap
+
+waFive <-[#Black]> waTwo : swap
+
+waSix <-[#Black]> waFour : swap
+waSix <-[#Black]> waOne : swap
+
+waThree <-[#Black]> waTwo : swap
+
+waFive <-[#Black]> waFour : swap
+waFive <-[#Black]> waOne : swap
+
+waFour <-[#Black]> waOne : swap
+
+waThree <-[#Black]> waOne : swap
+
+waTwo <-[#Black]> waOne : swap
+
+
+@enduml

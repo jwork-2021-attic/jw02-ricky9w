@@ -16,3 +16,6 @@ public class BubbleSorter implements Sorter
 - [ ] 根据颜色排序的具体实现
 - [ ] 颜色提取
 
+使用了uml-reverse-mapper自动分析源代码并生成class diagram.
+首先编译项目文件, 再打包生成 `.jar` 文件, 随后运行命令即可生成对应的 class diagram.
+该项目使用的 Java 版本较老, 运行时会出现报错:
